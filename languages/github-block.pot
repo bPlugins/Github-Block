@@ -1,0 +1,240 @@
+# Copyright (C) 2023 bPlugins LLC
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Github Block 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/github-block\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-08T16:26:54+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: github\n"
+
+#. Plugin Name of the plugin
+msgid "Github Block"
+msgstr ""
+
+#. Description of the plugin
+msgid "Description of the Github Block."
+msgstr ""
+
+#. Author of the plugin
+msgid "bPlugins LLC"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://bplugins.com"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9599
+msgid "Help"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9612
+msgid "Github Username"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9619
+msgid "Fetch Data"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9624
+msgid "Repositories Info"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9626
+msgid "Logo"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9628
+#: dist/editor.js:9703
+msgid "Name"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9630
+#: dist/editor.js:9712
+msgid "Description"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9632
+msgid "Download Button"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9634
+msgid "Topic"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9638
+#: dist/editor.js:9640
+#: dist/editor.js:9734
+msgid "Pagination"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9642
+msgid "Post Per Page"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9649
+msgid "Layout"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9651
+msgid "Masonry"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9654
+msgid "Column Gap:"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9657
+msgid "Row Gap:"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9662
+msgid "Columns:"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9675
+msgid "Wrapper"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9676
+#: dist/editor.js:9682
+msgid "Background:"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9678
+#: dist/editor.js:9684
+#: dist/editor.js:9727
+#: dist/editor.js:9759
+msgid "Padding"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9681
+msgid "Card"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9686
+#: dist/editor.js:9729
+#: dist/editor.js:9743
+#: dist/editor.js:9755
+msgid "Border"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9690
+msgid "Icon"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9692
+msgid "Size"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9697
+#: dist/editor.js:9706
+#: dist/editor.js:9715
+msgid "Color"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9704
+#: dist/editor.js:9713
+#: dist/editor.js:9723
+#: dist/editor.js:9735
+#: dist/editor.js:9749
+msgid "Typography"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9721
+msgid "Download Button & Topic"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9725
+#: dist/editor.js:9737
+#: dist/editor.js:9751
+msgid "Colors"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9739
+msgid "Active Typography"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9741
+msgid "Active Colors"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9748
+msgid "Modal Button"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9753
+msgid "Hover Colors"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:9757
+msgid "Hover Border"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:10502
+msgid "Please Insert Your Github Username And Fetch Data"
+msgstr ""
+
+#: block.json
+msgctxt "block title"
+msgid "Github"
+msgstr ""
+
+#: block.json
+msgctxt "block description"
+msgid "Description of Github."
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "github"
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "block"
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "repositories"
+msgstr ""
