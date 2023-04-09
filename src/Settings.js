@@ -21,36 +21,16 @@ import { useState, useEffect } from '@wordpress/element';
 
 const { generalStyleTabs, pxUnit, perUnit, emUnit } = options;
 
-const Settings = ({ attributes, setAttributes, setRepos, setLoading }) => {
-	const { columns, columnGap, rowGap, userName, isInfo, paginationAttr, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveTypo, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
+const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetchData }) => {
+	const { columns, columnGap, rowGap, userName, isInfo, paginationAttr, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
 
 	const { logo, repoName, desc, download, topic, pagination, masonry } = isInfo;
 	const { postsPerPage } = paginationAttr;
 	const [device, setDevice] = useState('desktop');
 
 	// Fetch the data 
-	const handleUserName = () => {
-		const fetchData = async () => {
-			try {
-				setLoading(true);
-				const response = await axios.get(
-					`https://api.github.com/users/${userName}/repos?per_page=100`
-				);
-				setRepos(response.data);
-				setLoading(false);
 
-			} catch (error) {
-				console.error(error.message);
-			}
-		}
-		fetchData();
-	}
 
-	useEffect(() => {
-		if (userName) {
-			handleUserName();
-		}
-	}, [])
 
 	// Object attr update
 	const updateObject = (attr, key, val) => {
@@ -69,7 +49,7 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading }) => {
 			<TabPanel className='bPlTabPanel ghbTabPanel' activeClass='activeTab' tabs={generalStyleTabs} onSelect={() => tabController()}>{tab => <>
 				{'general' === tab.name && <>
 
-					<PanelBody className='bPlPanelBody help' title={__('Help', 'github')} initialOpen={false}>
+					{/* <PanelBody className='bPlPanelBody help' title={__('Help', 'github')} initialOpen={false}>
 						<div className='helpItem'>
 							<a href='https://bblockswp.com/block-directory/' target='_blank' rel='noreferrer'><Dashicon icon='book' />{__('Read Documentation', 'block-directory')}</a>
 						</div>
@@ -80,7 +60,7 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading }) => {
 								<span>{__('We are new and we need your help to grow!🙏', 'block-directory')}</span>
 							</a>
 						</div>
-					</PanelBody>
+					</PanelBody> */}
 
 					<PanelBody className='bPlPanelBody' title={__('Github Username', 'github')} initialOpen={false}>
 						<PanelRow className='gap10'>
@@ -89,7 +69,7 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading }) => {
 									setRepos([]);
 							}} />
 
-							<Button className='ghbBtn' variant='scondary' onClick={handleUserName} disabled={!userName.trim()}>{__('Fetch Data', 'github')}</Button>
+							<Button className='ghbBtn' variant='scondary' onClick={handleFetchData} disabled={!userName.trim()}>{__('Fetch Data', 'github')}</Button>
 						</PanelRow>
 
 					</PanelBody>
@@ -208,8 +188,6 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading }) => {
 							<Typography className='mt10' label={__('Typography', 'github')} value={paginationBtnTypo} onChange={val => setAttributes({ paginationBtnTypo: val })} produce={produce} />
 
 							<ColorsControl className='' label={__('Colors', 'github')} value={paginationBtnColor} onChange={val => setAttributes({ paginationBtnColor: val })} />
-
-							<Typography className='mt20' label={__('Active Typography', 'github')} value={paginationBtnActiveTypo} onChange={val => setAttributes({ paginationBtnActiveTypo: val })} produce={produce} />
 
 							<ColorsControl className='' label={__('Active Colors', 'github')} value={paginationBtnActiveColor} onChange={val => setAttributes({ paginationBtnActiveColor: val })} />
 

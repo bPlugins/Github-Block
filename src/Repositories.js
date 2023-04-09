@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Pagination from './Components/Pagination';
-import icons from './Const/icons';
 
 import Modal from './Components/Modal';
 import Logo from './Components/Logo';

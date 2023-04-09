@@ -2,7 +2,7 @@
 import { getBoxValue } from './Const/functions';
 import { getBackgroundCSS, getBorderCSS, getTypoCSS, getColorsCSS } from '../../Components/Helper/getCSS';
 const Style = ({ attributes, clientId }) => {
-	const { columnGap, rowGap, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveTypo, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
+	const { columnGap, rowGap, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
 
 	const MainEl = `#ghbMainArea-${clientId}`;
 	const mainSection = `${MainEl} .ghbSectionArea`;
@@ -13,14 +13,14 @@ const Style = ({ attributes, clientId }) => {
 		${getTypoCSS('', descTypo)?.googleFontLink}
 		${getTypoCSS('', downloadBtnTypo)?.googleFontLink}
 		${getTypoCSS('', paginationBtnTypo)?.googleFontLink}
-		${getTypoCSS('', paginationBtnActiveTypo)?.googleFontLink}
+		 
 		${getTypoCSS('', modalBtnTypo)?.googleFontLink}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .name`, nameTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .desc`, descTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .download`, downloadBtnTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .topic`, downloadBtnTypo)?.styles}
 		${getTypoCSS(`${mainSection} .pagination button`, paginationBtnTypo)?.styles}
-		${getTypoCSS(`${mainSection} .pagination .active`, paginationBtnActiveTypo)?.styles}
+		 
 		${getTypoCSS(`${mainSection} .modalSection button`, modalBtnTypo)?.styles}
 		
 		${mainSection} {
@@ -70,7 +70,7 @@ const Style = ({ attributes, clientId }) => {
 			${getBorderCSS(modalBtnHoverBorder)};
 		}
 
-		${mainSection} .modalSection > button.button--nina::after {
+		${mainSection} .modalSection > button.ghbModalBtn::after {
 			${getColorsCSS(modalBtnHoverColors)};
 		}
 

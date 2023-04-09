@@ -7,7 +7,7 @@ import Style from './Style';
 import Repositories from './Repositories';
 import icons from './Const/icons';
 
-// Block Directory
+// Github Block
 document.addEventListener('DOMContentLoaded', () => {
 	const allBlockDirectory = document.querySelectorAll('.wp-block-ghb-github');
 	allBlockDirectory.forEach(directory => {
@@ -42,8 +42,16 @@ const RenderRepositories = ({ attributes }) => {
 		}
 		fetchData();
 	}, []);
+	const isBackEnd = false;
+	// return loading ? <div className="loader">
+	// 	{icons.preloader}
+	// </div> : <Repositories attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />
 
-	return loading ? <div className="loader">
+	return loading ? <div className="loader ghbUserName">
 		{icons.preloader}
-	</div> : <Repositories attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />
+	</div> : <>
+		{repos.length ?
+			<Repositories attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />
+			: <span></span>}
+	</>
 }

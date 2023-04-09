@@ -189,18 +189,6 @@
 				"bg": "#000"
 			}
 		},
-		"paginationBtnActiveTypo": {
-			"type": "object",
-			"default": {
-				"fontSize": {
-					"desktop": 16,
-					"tablet": 15,
-					"mobile": 15
-				},
-				"fontWeight": 900,
-				"lineHeight": "135%"
-			}
-		},
 		"paginationBtnActiveColor": {
 			"type": "object",
 			"default": {

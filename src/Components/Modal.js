@@ -38,7 +38,7 @@ const Modal = ({ currentPosts, attributes, pagination, setIsFullPage, handleFull
                 setIsFullPage(false);
             }
         }}>
-            <button className="button button--nina button--text-thick button--text-upper button--size-s" data-text="View All Gits" onClick={handleFullPage} ><span>V</span><span>i</span><span>e</span><span>w</span> <span></span><span>A</span><span>l</span><span>l</span><span></span> <span>G</span><span>i</span><span>t</span><span>s</span></button>
+            <button className="button ghbModalBtn button--text-thick button--text-upper button--size-s" data-text="View All Gits" onClick={handleFullPage} ><span>V</span><span>i</span><span>e</span><span>w</span> <span></span><span>A</span><span>l</span><span>l</span><span></span> <span>G</span><span>i</span><span>t</span><span>s</span></button>
 
             <div className={`ghbModalMainSection ghbModalPopup ${toggleClass}`}>
                 <div className="ghbChildSection">
