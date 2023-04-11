@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Github Block
+ * Plugin Name:  Embed Github
  * Description: Description of the Github Block.
  * Version: 1.0.0
  * Author: bPlugins LLC
@@ -17,8 +17,8 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
 define( 'GHB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
 define( 'GHB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
-// Github Block
-class GHBGithub{
+//  Embed Github
+class GHBEmbedGithub{
 	function __construct(){
 		add_action( 'enqueue_block_assets', [$this, 'enqueueBlockAssets'] );
 		add_action( 'init', [$this, 'onInit'] );
@@ -61,4 +61,4 @@ class GHBGithub{
 		<?php return ob_get_clean();
 	} // Render
 }
-new GHBGithub();
+new GHBEmbedGithub();

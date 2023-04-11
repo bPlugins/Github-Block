@@ -1,7 +1,7 @@
 {
 	"apiVersion": "1",
 	"name": "ghb/github",
-	"title": "Github",
+	"title": "Github Block",
 	"description": "Description of Github.",
 	"category": "widgets",
 	"keywords": [

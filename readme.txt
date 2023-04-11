@@ -1,9 +1,9 @@
 === Github Block ===
-Contributors: abuhayat
-Donate link: https://gum.co/wpdonate/
-Tags: block, key1, key2, key3, Gutenberg block
+Contributors: abuhayat,btechnologies
+Donate link: https://www.buymeacoffee.com/abuhayat
+Tags: block, github, embed github,Repositories, Gutenberg block
 Requires at least: 5.0+
-Tested up to: 5.9.2
+Tested up to: 6.2.1
 Stable tag: 1.0.0
 Requires PHP: 7.1
 License: GPLv3 or later
