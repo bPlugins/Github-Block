@@ -30,8 +30,7 @@ class GHBEmbedGithub{
 
 		wp_register_style( 'ghb-showcase-style', plugins_url( 'dist/style.css', __FILE__ ), [ 'fontAwesome' ], GHB_PLUGIN_VERSION );
 
-		wp_register_script( 'MiniMasonry', GHB_ASSETS_DIR . 'js/masonry.min.js', [], '1.3.1'  );
-		wp_register_script('ghb-showcase-script', plugins_url( 'dist/script.js', __FILE__ ), ['MiniMasonry', 'react', 'react-dom' ], GHB_PLUGIN_VERSION );
+		wp_register_script('ghb-showcase-script', plugins_url( 'dist/script.js', __FILE__ ), [ 'react', 'react-dom' ], GHB_PLUGIN_VERSION );
 
 	}
 

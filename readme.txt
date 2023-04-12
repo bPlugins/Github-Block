@@ -1,4 +1,4 @@
-=== Github Block ===
+=== Embed Github ===
 Contributors: abuhayat,btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, github, embed github,Repositories, Gutenberg block

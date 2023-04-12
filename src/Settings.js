@@ -1,8 +1,7 @@
 import { __ } from '@wordpress/i18n';
-import axios from "axios";
 import produce from 'immer';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, Dashicon, __experimentalInputControl as InputControl } from '@wordpress/components';
+import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl } from '@wordpress/components';
 
 // Settings Components
 import Title from '../../Components/Title';

@@ -43,12 +43,6 @@ const Edit = props => {
 		<div className={className} id={`ghbMainArea-${clientId}`}>
 			<Style attributes={attributes} clientId={clientId} />
 
-			{/* {(!userName.trim() || !repos.length) ?
-				<div className='ghbUserName'>
-					<h1>{__('Please Insert Your Github Username', 'github')}</h1>
-				</div>
-				: <Repositories clientId={clientId} attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />} */}
-
 			{loading ? <div className="loader ghbUserName">
 				{icons.preloader}
 			</div> : <>

@@ -42,10 +42,6 @@ const RenderRepositories = ({ attributes }) => {
 		}
 		fetchData();
 	}, []);
-	const isBackEnd = false;
-	// return loading ? <div className="loader">
-	// 	{icons.preloader}
-	// </div> : <Repositories attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />
 
 	return loading ? <div className="loader ghbUserName">
 		{icons.preloader}
