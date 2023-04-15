@@ -27,10 +27,6 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 	const { postsPerPage } = paginationAttr;
 	const [device, setDevice] = useState('desktop');
 
-	// Fetch the data 
-
-
-
 	// Object attr update
 	const updateObject = (attr, key, val) => {
 		const newAttr = { ...attributes[attr] };
