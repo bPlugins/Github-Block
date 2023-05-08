@@ -13,8 +13,8 @@ import MiniMasonry from "minimasonry";
 import { getNumber } from './Const/functions';
 
 const Repositories = ({ attributes, repos, clientId }) => {
-	const { columnGap, rowGap, isInfo, paginationAttr, columns, githubIcon } = attributes;
-	const { logo, repoName, desc, download, topic, pagination, masonry } = isInfo;
+	const { columnGap, rowGap, elements, query, columns, githubIcon } = attributes;
+	const { logo, repoName, desc, download, topic, pagination, masonry } = elements;
 	const [isFullPage, setIsFullPage] = useState(false);
 	const [miniMasonry, setMiniMasonry] = useState(null);
 	const containerRef = useRef();
@@ -26,7 +26,7 @@ const Repositories = ({ attributes, repos, clientId }) => {
 	let toggleClass = isFullPage ? 'activeFull' : null;
 
 	// Pagination 
-	const { postsPerPage } = paginationAttr;
+	const { postsPerPage } = query;
 	const [currentPage, setCurrentPage] = useState(1);
 	const [currentPosts, setCurrentPosts] = useState([]);
 

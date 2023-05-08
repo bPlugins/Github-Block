@@ -1,7 +1,7 @@
 === Embed Github ===
 Contributors: abuhayat,btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, github, embed github,Repositories, Gutenberg block
+Tags: block, github, embed github, Repositories, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.2.1
 Stable tag: 1.0.0
@@ -9,28 +9,35 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Short Description
+Embed your GitHub repositories on WordPress.   
 
 == Description ==
 
-Large Description
+Embed your GitHub repositories on WordPress. This is a block plugin By which you can embed your Github Repository / Repositories anywhere in the WordPress area.  
 
 
-**[Demos](https://bblockswp.com/demo/block-directory/)**
-
+**[Demos](https://bplugins.com/products/embed-github/#demos)**
 
 = Features =
-- **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+- Show all repositories.
+- Fully customizable.
+- Repositories per page set.
+- Pagination show/hide.
+- Repositories info icon,name,title and button show/hide.
+- Select layout masonry.
+- Set Columns, column gap and row gap.
+- Repositories background color set.
+- Repositories info icon,name,title and button typography and color set.
+- Pagination typography,colors,active colors and border set.
 
 
 = How to use =
-- First install the Github block plugin
-- Add the Github block block from the block category called "Widgets" in Gutenberg editor.
-- You can change block settings from the right side settings sidebar.
-- Enjoy!
+- Go to the Plugins Menu in WordPress
+- Search for “embed github”
+- Click “Install”
+- Activate the embed github block Plugin on your Plugins Menu
 
 * For installation help click on Installation Tab
-
 
 = Feedback =
 - Liked that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
@@ -43,40 +50,40 @@ Large Description
 
 = ⭐ Check out our other WordPress Plugins- =
 
-🔥 **[Html5 Audio Player](https://audioplayerwp.com/)** – Best audio player plugin for WordPress.
+🔥 **[Html5 Audio Player](https://bplugins.com/products/html5-audio-player)** – Best audio player plugin for WordPress.
 
-🔥 **[Html5 Video Player](https://wpvideoplayer.com/)** – Best video player plugin for WordPress.
+🔥 **[Html5 Video Player](https://bplugins.com/products/html5-video-player)** – Best video player plugin for WordPress.
 
-🔥 **[PDF Poster](http://pdfposter.com/)** – A fully-featured PDF Viewer Plugin for WordPress.
+🔥 **[PDF Poster](https://bplugins.com/products/pdf-poster)** – A fully-featured PDF Viewer Plugin for WordPress.
 
-🔥 **[StreamCast](https://wordpress.org/plugins/streamcast)** – A fully-featured Radio Player Plugin for WordPress.
+🔥 **[StreamCast](https://bplugins.com/products/streamcast-radio-player)** – A fully-featured Radio Player Plugin for WordPress.
 
-🔥 **[3D Viewer](https://3d-viewer.bplugins.com/)** – Display interactive 3D models on the webs.
+🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer)** – Display interactive 3D models on the webs.
 
 
 == Installation ==
 
 = From Gutenberg Editor: =
 1. Go to the WordPress Block/Gutenberg Editor
-2. Search For **Github block**
-3. Click on the **Github block** to add the block
+2. Search For **embed github Block**
+3. Click on the **embed github Block** to add the block
 
 = Download & Upload: =
-1. Download the **Github block** plugin (*.zip file*)
+1. Download the **Embed-Github** plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`block-directory.zip`** file and click on **Install Now**
+3. Click on **Upload Plugin** and choose the **`Embed-Github.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
-1. Download and upload the **Github block** plugin to the **`/wp-content/plugins/`** directory
+1. Download and upload the **embed github Block** plugin to the **`/wp-content/plugins/`** directory
 2. Activate the plugin through the Plugins menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= Is Github block free? =
+= Is Embed github Block free? =
 
-Yes, Github block is a free Gutenberg block plugin.
+Yes, Embed github Block is a free Gutenberg block plugin.
 
 = Does it work with any WordPress theme? =
 
@@ -92,15 +99,16 @@ You can use unlimited times as you want.
 
 = Where can I get support? =
 
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/block-directory/)
-
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/embed-github/)
 
 == Screenshots ==
 
-1. Github block
-2. Settings
-
-
+1. Settings
+2. Default
+3. Column
+4. Masonry
+5. Popup
+ 
 == Changelog ==
 
 = 1.0.0 =

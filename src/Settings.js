@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import produce from 'immer';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl } from '@wordpress/components';
+import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon } from '@wordpress/components';
 
 // Settings Components
 import Title from '../../Components/Title';
@@ -20,11 +20,11 @@ import { useState, useEffect } from '@wordpress/element';
 
 const { generalStyleTabs, pxUnit, perUnit, emUnit } = options;
 
-const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetchData }) => {
-	const { columns, columnGap, rowGap, userName, isInfo, paginationAttr, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
+const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
+	const { columns, columnGap, rowGap, userName, elements, query, background, padding, cardBG, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColors, downloadBtnPadding, downloadBtnBorder, pageBtnTypo, pageBtnColors, pageBtnActiveColors, pageBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
 
-	const { logo, repoName, desc, download, topic, pagination, masonry } = isInfo;
-	const { postsPerPage } = paginationAttr;
+	const { logo, repoName, desc, download, topic, pagination, masonry } = elements;
+	const { postsPerPage } = query;
 	const [device, setDevice] = useState('desktop');
 
 	// Object attr update
@@ -44,18 +44,18 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 			<TabPanel className='bPlTabPanel ghbTabPanel' activeClass='activeTab' tabs={generalStyleTabs} onSelect={() => tabController()}>{tab => <>
 				{'general' === tab.name && <>
 
-					{/* <PanelBody className='bPlPanelBody help' title={__('Help', 'github')} initialOpen={false}>
+					<PanelBody className='bPlPanelBody help' title={__('Help', 'github')} initialOpen={false}>
 						<div className='helpItem'>
-							<a href='https://bblockswp.com/block-directory/' target='_blank' rel='noreferrer'><Dashicon icon='book' />{__('Read Documentation', 'block-directory')}</a>
+							<a href='https://bplugins.com/docs/embed-github-docs/' target='_blank' rel='noreferrer'><Dashicon icon='book' />{__('Read Documentation', 'github')}</a>
 						</div>
 
 						<div className='helpItem rateUs'>
-							<a href='https://wordpress.org/support/plugin/block-directory/reviews/#new-post' target='_blank' rel='noreferrer'>
-								<span><Dashicon icon='star-filled' />{__('Would you please rate us?', 'block-directory')}</span>
-								<span>{__('We are new and we need your help to grow!🙏', 'block-directory')}</span>
+							<a href='https://wordpress.org/support/plugin/embed-github/reviews/#new-post' target='_blank' rel='noreferrer'>
+								<span><Dashicon icon='star-filled' />{__('Would you please rate us?', 'github')}</span>
+								<span>{__('We are new and we need your help to grow!🙏', 'github')}</span>
 							</a>
 						</div>
-					</PanelBody> */}
+					</PanelBody>
 
 					<PanelBody className='bPlPanelBody' title={__('Github Username', 'github')} initialOpen={false}>
 						<PanelRow className='gap10'>
@@ -71,32 +71,32 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 
 					<PanelBody className='bPlPanelBody' title={__('Repositories Info', 'github')} initialOpen={false}>
 
-						<ToggleControl label={__('Logo', 'github')} className='mt20' checked={logo} onChange={(val) => { setAttributes({ isInfo: { ...isInfo, logo: val } }); }} />
+						<ToggleControl label={__('Logo', 'github')} className='mt20' checked={logo} onChange={(val) => { setAttributes({ elements: { ...elements, logo: val } }); }} />
 
-						<ToggleControl label={__('Name', 'github')} className='mt20' checked={repoName} onChange={(val) => { setAttributes({ isInfo: { ...isInfo, repoName: val } }); }} />
+						<ToggleControl label={__('Name', 'github')} className='mt20' checked={repoName} onChange={(val) => { setAttributes({ elements: { ...elements, repoName: val } }); }} />
 
-						<ToggleControl label={__('Description', 'github')} className='mt20' checked={desc} onChange={(val) => { setAttributes({ isInfo: { ...isInfo, desc: val } }); }} />
+						<ToggleControl label={__('Description', 'github')} className='mt20' checked={desc} onChange={(val) => { setAttributes({ elements: { ...elements, desc: val } }); }} />
 
-						<ToggleControl label={__('Download Button', 'github')} className='mt20' checked={download} onChange={(val) => { setAttributes({ isInfo: { ...isInfo, download: val } }); }} />
+						<ToggleControl label={__('Download Button', 'github')} className='mt20' checked={download} onChange={(val) => { setAttributes({ elements: { ...elements, download: val } }); }} />
 
-						<ToggleControl label={__('Topic', 'github')} className='mt20' checked={topic} onChange={(val) => { setAttributes({ isInfo: { ...isInfo, topic: val } }); }} />
+						<ToggleControl label={__('Topic', 'github')} className='mt20' checked={topic} onChange={(val) => { setAttributes({ elements: { ...elements, topic: val } }); }} />
 
 					</PanelBody>
 
 					<PanelBody className='bPlPanelBody' title={__('Pagination', 'github')} initialOpen={false}>
 
-						<ToggleControl label={__('Pagination', 'github')} className='mt20' checked={pagination} onChange={(val) => { updateObject('isInfo', 'pagination', val) }} />
+						<ToggleControl label={__('Pagination', 'github')} className='mt20' checked={pagination} onChange={(val) => { updateObject('elements', 'pagination', val) }} />
 
-						<Title>{__('Post Per Page', 'github')}</Title>
+						<Title>{__('Repositories  Per Page', 'github')}</Title>
 						<RangeControl className='' value={postsPerPage} onChange={val =>
-							updateObject('paginationAttr', 'postsPerPage', val)}
+							updateObject('query', 'postsPerPage', val)}
 							min={1} max={20} step={1} />
 
 					</PanelBody>
 
 					<PanelBody className='bPlPanelBody' title={__('Layout', 'github')} initialOpen={false}>
 
-						<ToggleControl label={__('Masonry', 'github')} className='mt20' checked={masonry} onChange={(val) => { updateObject('isInfo', 'masonry', val) }} />
+						<ToggleControl label={__('Masonry', 'github')} className='mt20' checked={masonry} onChange={(val) => { updateObject('elements', 'masonry', val) }} />
 
 						{/* column Gap  */}
 						<UnitControl className='mt20' label={__('Column Gap:', 'github')} labelPosition='left' value={columnGap} onChange={val => setAttributes({ columnGap: val })} units={[pxUnit(30), perUnit(3), emUnit(2)]} isResetValueOnUnitChange={true} />
@@ -121,13 +121,13 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 				{'style' === tab.name && <>
 
 					<PanelBody className='bPlPanelBody' title={__('Wrapper', 'github')} initialOpen={false}>
-						<Background className='mb20' label={__('Background:', 'github')} value={wrapperBgColor} onChange={val => setAttributes({ wrapperBgColor: val })} />
+						<Background className='mb20' label={__('Background:', 'github')} value={background} onChange={val => setAttributes({ background: val })} />
 
-						<BoxControl label={__('Padding', 'github')} values={wrapperPadding} onChange={val => setAttributes({ wrapperPadding: val })} resetValues={{ top: 0, right: 0, bottom: 0, left: 0 }} units={[pxUnit(3), emUnit(2)]} />
+						<BoxControl label={__('Padding', 'github')} values={padding} onChange={val => setAttributes({ padding: val })} resetValues={{ top: 0, right: 0, bottom: 0, left: 0 }} units={[pxUnit(3), emUnit(2)]} />
 					</PanelBody>
 
 					<PanelBody className='bPlPanelBody' title={__('Card', 'github')} initialOpen={false}>
-						<Background className='mb20' label={__('Background:', 'github')} value={cardBackground} onChange={val => setAttributes({ cardBackground: val })} />
+						<Background className='mb20' label={__('Background:', 'github')} value={cardBG} onChange={val => setAttributes({ cardBG: val })} />
 
 						<BoxControl className='mb20' label={__('Padding', 'github')} values={cardPadding} onChange={val => setAttributes({ cardPadding: val })} resetValues={{ top: 0, right: 0, bottom: 0, left: 0 }} units={[pxUnit(3), emUnit(2)]} />
 
@@ -170,7 +170,7 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 
 							<Typography className='mt10' label={__('Typography', 'github')} value={downloadBtnTypo} onChange={val => setAttributes({ downloadBtnTypo: val })} produce={produce} />
 
-							<ColorsControl className='mb20' label={__('Colors', 'github')} value={downloadBtnColor} onChange={val => setAttributes({ downloadBtnColor: val })} />
+							<ColorsControl className='mb20' label={__('Colors', 'github')} value={downloadBtnColors} onChange={val => setAttributes({ downloadBtnColors: val })} />
 
 							<BoxControl label={__('Padding', 'github')} values={downloadBtnPadding} onChange={val => setAttributes({ downloadBtnPadding: val })} resetValues={{ top: 0, right: 0, bottom: 0, left: 0 }} units={[pxUnit(3), emUnit(2)]} />
 
@@ -180,13 +180,13 @@ const Settings = ({ attributes, setAttributes, setRepos, setLoading, handleFetch
 
 					{pagination && <>
 						<PanelBody className='bPlPanelBody' title={__('Pagination', 'github')} initialOpen={false}>
-							<Typography className='mt10' label={__('Typography', 'github')} value={paginationBtnTypo} onChange={val => setAttributes({ paginationBtnTypo: val })} produce={produce} />
+							<Typography className='mt10' label={__('Typography', 'github')} value={pageBtnTypo} onChange={val => setAttributes({ pageBtnTypo: val })} produce={produce} />
 
-							<ColorsControl className='' label={__('Colors', 'github')} value={paginationBtnColor} onChange={val => setAttributes({ paginationBtnColor: val })} />
+							<ColorsControl className='' label={__('Colors', 'github')} value={pageBtnColors} onChange={val => setAttributes({ pageBtnColors: val })} />
 
-							<ColorsControl className='' label={__('Active Colors', 'github')} value={paginationBtnActiveColor} onChange={val => setAttributes({ paginationBtnActiveColor: val })} />
+							<ColorsControl className='' label={__('Active Colors', 'github')} value={pageBtnActiveColors} onChange={val => setAttributes({ pageBtnActiveColors: val })} />
 
-							<BorderControl className='mt10' label={__('Border', 'github')} value={paginationBtnBorder} onChange={(val) => setAttributes({ paginationBtnBorder: val })} />
+							<BorderControl className='mt10' label={__('Border', 'github')} value={pageBtnBorder} onChange={(val) => setAttributes({ pageBtnBorder: val })} />
 						</PanelBody>
 					</>}
 

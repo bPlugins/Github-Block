@@ -2,7 +2,7 @@
 import { getBoxValue } from './Const/functions';
 import { getBackgroundCSS, getBorderCSS, getTypoCSS, getColorsCSS } from '../../Components/Helper/getCSS';
 const Style = ({ attributes, clientId }) => {
-	const { columnGap, rowGap, wrapperBgColor, wrapperPadding, cardBackground, cardPadding, cardBorder, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColor, downloadBtnPadding, downloadBtnBorder, paginationBtnTypo, paginationBtnColor, paginationBtnActiveColor, paginationBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
+	const { columnGap, rowGap, background, padding, cardBG, cardPadding, cardBorder, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColors, downloadBtnPadding, downloadBtnBorder, pageBtnTypo, pageBtnColors, pageBtnActiveColors, pageBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
 
 	const MainEl = `#ghbMainArea-${clientId}`;
 	const mainSection = `${MainEl} .ghbSectionArea`;
@@ -12,20 +12,20 @@ const Style = ({ attributes, clientId }) => {
 		${getTypoCSS('', nameTypo)?.googleFontLink}
 		${getTypoCSS('', descTypo)?.googleFontLink}
 		${getTypoCSS('', downloadBtnTypo)?.googleFontLink}
-		${getTypoCSS('', paginationBtnTypo)?.googleFontLink}
+		${getTypoCSS('', pageBtnTypo)?.googleFontLink}
 		 
 		${getTypoCSS('', modalBtnTypo)?.googleFontLink}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .name`, nameTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .desc`, descTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .download`, downloadBtnTypo)?.styles}
 		${getTypoCSS(`${mainSection} .ghbSingleRepoCard .topic`, downloadBtnTypo)?.styles}
-		${getTypoCSS(`${mainSection} .pagination button`, paginationBtnTypo)?.styles}
+		${getTypoCSS(`${mainSection} .pagination button`, pageBtnTypo)?.styles}
 		 
 		${getTypoCSS(`${mainSection} .modalSection button`, modalBtnTypo)?.styles}
 		
 		${mainSection} {
-			${getBackgroundCSS(wrapperBgColor)};
-			padding:${getBoxValue(wrapperPadding)};
+			${getBackgroundCSS(background)};
+			padding:${getBoxValue(padding)};
 		}
 
 		${MainEl} .ghbMainArea{
@@ -33,7 +33,7 @@ const Style = ({ attributes, clientId }) => {
 		}
 
 		${mainSection} .ghbSingleRepo .ghbSingleRepoCard{
-			${getBackgroundCSS(cardBackground)};
+			${getBackgroundCSS(cardBG)};
 			padding:${getBoxValue(cardPadding)};
 			${getBorderCSS(cardBorder)};
 		}
@@ -46,18 +46,18 @@ const Style = ({ attributes, clientId }) => {
 		}
 		${mainSection} .ghbSingleRepoCard .download,
 		${mainSection} .ghbSingleRepoCard .topic {
-			${getColorsCSS(downloadBtnColor)};
+			${getColorsCSS(downloadBtnColors)};
 			padding:${getBoxValue(downloadBtnPadding)};
 			${getBorderCSS(downloadBtnBorder)};
 		}
 
 		${mainSection} .pagination button { 
-			${getColorsCSS(paginationBtnColor)};
-			${getBorderCSS(paginationBtnBorder)};
+			${getColorsCSS(pageBtnColors)};
+			${getBorderCSS(pageBtnBorder)};
 		}
 
 		${mainSection} .pagination .active { 
-			${getColorsCSS(paginationBtnActiveColor)};
+			${getColorsCSS(pageBtnActiveColors)};
 		}
 
 		${mainSection} .modalSection button {

@@ -24,6 +24,6 @@ exports.bundle = () => (
 		'!todo.txt',
 		'!webpack.config.js',
 	])
-		.pipe(zip('Embed-Github.zip'))
+		.pipe(zip('embed-github-block.zip'))
 		.pipe(gulp.dest('bundled'))
 );

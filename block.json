@@ -2,7 +2,7 @@
 	"apiVersion": "1",
 	"name": "ghb/github",
 	"title": "Embed Github",
-	"description": "Description of Github.",
+	"description": "Embed your GitHub repositories on WordPress.",
 	"category": "widgets",
 	"keywords": [
 		"github",
@@ -15,6 +15,32 @@
 		"align": {
 			"type": "string",
 			"default": "wide"
+		},
+		"cId": {
+			"type": "string",
+			"default": ""
+		},
+		"userName": {
+			"type": "string",
+			"default": ""
+		},
+		"elements": {
+			"type": "object",
+			"default": {
+				"logo": true,
+				"repoName": true,
+				"desc": true,
+				"download": true,
+				"topic": true,
+				"pagination": true,
+				"masonry": false
+			}
+		},
+		"query": {
+			"type": "object",
+			"default": {
+				"postsPerPage": 8
+			}
 		},
 		"columns": {
 			"type": "object",
@@ -32,39 +58,13 @@
 			"type": "string",
 			"default": "40px"
 		},
-		"cId": {
-			"type": "string",
-			"default": ""
-		},
-		"userName": {
-			"type": "string",
-			"default": ""
-		},
-		"isInfo": {
-			"type": "object",
-			"default": {
-				"logo": true,
-				"repoName": true,
-				"desc": true,
-				"download": true,
-				"topic": true,
-				"pagination": true,
-				"masonry": false
-			}
-		},
-		"paginationAttr": {
-			"type": "object",
-			"default": {
-				"postsPerPage": 8
-			}
-		},
-		"wrapperBgColor": {
+		"background": {
 			"type": "object",
 			"default": {
 				"color": "#000"
 			}
 		},
-		"wrapperPadding": {
+		"padding": {
 			"type": "object",
 			"default": {
 				"top": "20px",
@@ -73,7 +73,7 @@
 				"left": "20px"
 			}
 		},
-		"cardBackground": {
+		"cardBG": {
 			"type": "object",
 			"default": {
 				"color": "#000"
@@ -147,7 +147,7 @@
 				"lineHeight": "135%"
 			}
 		},
-		"downloadBtnColor": {
+		"downloadBtnColors": {
 			"type": "object",
 			"default": {
 				"color": "#fff",
@@ -171,7 +171,7 @@
 				"width": "1px"
 			}
 		},
-		"paginationBtnTypo": {
+		"pageBtnTypo": {
 			"type": "object",
 			"default": {
 				"fontSize": {
@@ -183,21 +183,21 @@
 				"lineHeight": "135%"
 			}
 		},
-		"paginationBtnColor": {
+		"pageBtnColors": {
 			"type": "object",
 			"default": {
 				"color": "#fff",
 				"bg": "#000"
 			}
 		},
-		"paginationBtnActiveColor": {
+		"pageBtnActiveColors": {
 			"type": "object",
 			"default": {
 				"color": "#000",
 				"bg": "#fff"
 			}
 		},
-		"paginationBtnBorder": {
+		"pageBtnBorder": {
 			"type": "object",
 			"default": {
 				"color": "#eee",
@@ -231,6 +231,15 @@
 				"bg": "#000"
 			}
 		},
+		"modalBtnPadding": {
+			"type": "object",
+			"default": {
+				"top": "8px",
+				"right": "25px",
+				"bottom": "8px",
+				"left": "25px"
+			}
+		},
 		"modalBtnBorder": {
 			"type": "object",
 			"default": {
@@ -246,61 +255,6 @@
 				"style": "solid",
 				"width": "1px"
 			}
-		},
-		"modalBtnPadding": {
-			"type": "object",
-			"default": {
-				"top": "8px",
-				"right": "25px",
-				"bottom": "8px",
-				"left": "25px"
-			}
-		},
-		"layout": {
-			"type": "string",
-			"default": "vertical"
-		},
-		"isIcon": {
-			"type": "boolean",
-			"default": true
-		},
-		"icon": {
-			"type": "object",
-			"default": {
-				"class": "fab fa-wordpress"
-			}
-		},
-		"separator": {
-			"type": "object",
-			"default": {
-				"width": "20%",
-				"height": "2px",
-				"style": "solid",
-				"color": "#bbb"
-			}
-		},
-		"padding": {
-			"type": "object",
-			"default": {
-				"vertical": "15px",
-				"horizontal": "30px"
-			}
-		},
-		"margin": {
-			"type": "object",
-			"default": {
-				"bottom": "15px"
-			}
-		},
-		"border": {
-			"type": "object",
-			"default": {
-				"radius": "50%"
-			}
-		},
-		"shadow": {
-			"type": "object",
-			"default": {}
 		}
 	},
 	"supports": {

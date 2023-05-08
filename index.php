@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:  Embed Github
- * Description: Description of the Github Block.
+ * Description: Embed your GitHub repositories on WordPress.
  * Version: 1.0.0
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
@@ -26,16 +26,14 @@ class GHBEmbedGithub{
 
 	function enqueueBlockAssets(){
 
-		wp_register_style( 'fontAwesome', GHB_ASSETS_DIR . 'css/fontAwesome.min.css', [], '5.15.4' );
+		wp_register_style( 'ghb-github-style', plugins_url( 'dist/style.css', __FILE__ ), [ ], GHB_PLUGIN_VERSION );
 
-		wp_register_style( 'ghb-showcase-style', plugins_url( 'dist/style.css', __FILE__ ), [ 'fontAwesome' ], GHB_PLUGIN_VERSION );
-
-		wp_register_script('ghb-showcase-script', plugins_url( 'dist/script.js', __FILE__ ), [ 'react', 'react-dom' ], GHB_PLUGIN_VERSION );
+		wp_register_script('ghb-github-script', plugins_url( 'dist/script.js', __FILE__ ), [ 'react', 'react-dom' ], GHB_PLUGIN_VERSION );
 
 	}
 
 	function onInit() {
-		wp_register_style( 'ghb-github-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'ghb-showcase-style' ], GHB_PLUGIN_VERSION ); // Backend Style
+		wp_register_style( 'ghb-github-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'ghb-github-style' ], GHB_PLUGIN_VERSION ); // Backend Style
 		 
 		register_block_type( __DIR__, [
 			'editor_style'		=> 'ghb-github-editor-style',
@@ -51,8 +49,8 @@ class GHBEmbedGithub{
 		$className = $className ?? '';
 		$ghbBlockClassName = 'wp-block-ghb-github' . $className . ' align' . $align;
 
-		wp_enqueue_style( 'ghb-showcase-style' );
-		wp_enqueue_script( 'ghb-showcase-script' );
+		wp_enqueue_style( 'ghb-github-style' );
+		wp_enqueue_script( 'ghb-github-script' );
 
 		ob_start(); ?>
 		<div class='<?php echo esc_attr( $ghbBlockClassName);?>' id='ghbMainArea-<?php echo esc_attr( $cId )?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
