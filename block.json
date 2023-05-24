@@ -6,9 +6,8 @@
 	"category": "widgets",
 	"keywords": [
 		"github",
-		"block",
-		"repositories",
-		"embed github"
+		"github embed",
+		"github repositories"
 	],
 	"textdomain": "github",
 	"attributes": {

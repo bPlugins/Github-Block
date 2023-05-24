@@ -1,7 +1,7 @@
 === Embed Github ===
 Contributors: abuhayat,btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, github, embed github, Repositories, Gutenberg block
+Tags: block, github, embed github, github Repositories, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.2.1
 Stable tag: 1.0.0
@@ -9,11 +9,11 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Embed your GitHub repositories on WordPress.   
+Embed your GitHub repositories on WordPress.  
 
 == Description ==
 
-Embed your GitHub repositories on WordPress. This is a block plugin By which you can embed your Github Repository / Repositories anywhere in the WordPress area.  
+Embed GitHub repo in a website using this block plugin. With this plugin, you can easily embed your GitHub repository/repositories anywhere in the WordPress area.
 
 
 **[Demos](https://bplugins.com/products/embed-github/#demos)**
@@ -69,13 +69,13 @@ Embed your GitHub repositories on WordPress. This is a block plugin By which you
 3. Click on the **embed github Block** to add the block
 
 = Download & Upload: =
-1. Download the **Embed-Github** plugin (*.zip file*)
+1. Download the **embed-github-block** plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`Embed-Github.zip`** file and click on **Install Now**
+3. Click on **Upload Plugin** and choose the **`embed-github-block.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
-1. Download and upload the **embed github Block** plugin to the **`/wp-content/plugins/`** directory
+1. Download and upload the **embed github block** plugin to the **`/wp-content/plugins/`** directory
 2. Activate the plugin through the Plugins menu in WordPress
 
 
