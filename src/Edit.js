@@ -9,6 +9,8 @@ import { tabController } from './Const/functions';
 import icons from './Const/icons';
 import axios from 'axios';
 
+import BPLSDK from '../bplugins_sdk/src/components/v1/BPLSDK';
+
 const Edit = props => {
 	const { className, attributes, setAttributes, clientId, isSelected } = props;
 
@@ -40,6 +42,8 @@ const Edit = props => {
 
 	return <>
 		<Settings handleFetchData={handleFetchData} repos={repos} setRepos={setRepos} attributes={attributes} setAttributes={setAttributes} clientId={clientId} loading={loading} setLoading={setLoading} />
+
+		<BPLSDK setAttributes={setAttributes} />
 
 		<div className={className} id={`ghbMainArea-${clientId}`}>
 			<Style attributes={attributes} clientId={clientId} />

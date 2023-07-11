@@ -17,6 +17,17 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
 define( 'GHB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
 define( 'GHB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
+if(!function_exists('ghb_init')){
+    function ghb_init(){
+        global $ghb_bs;
+        require_once(plugin_dir_path(__FILE__).'bplugins_sdk/init.php');
+        $ghb_bs = new BPlugins_SDK(__FILE__);
+    }
+    ghb_init();
+}else {
+	$ghb_bs->uninstall_plugin(__FILE__);
+}
+
 //  Embed Github
 class GHBEmbedGithub{
 	function __construct(){

@@ -4,13 +4,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon } from '@wordpress/components';
 
 // Settings Components
-import Title from '../../Components/Title';
-import BDevice from '../../Components/BDevice';
-import Background from '../../Components/Background';
-import Typography from '../../Components/Typography';
-import BColor from '../../Components/BColor';
-import ColorsControl from '../../Components/ColorsControl';
-import BorderControl from '../../Components/BorderControl';
+import { Label, BDevice, Background, Typography, BColor, ColorsControl, BorderControl } from '../../Components';
 
 
 import { tabController } from './Const/functions';
@@ -87,7 +81,7 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 
 						<ToggleControl label={__('Pagination', 'github')} className='mt20' checked={pagination} onChange={(val) => { updateObject('elements', 'pagination', val) }} />
 
-						<Title>{__('Repositories  Per Page', 'github')}</Title>
+						<Label>{__('Repositories  Per Page', 'github')}</Label>
 						<RangeControl className='' value={postsPerPage} onChange={val =>
 							updateObject('query', 'postsPerPage', val)}
 							min={1} max={20} step={1} />
@@ -107,7 +101,7 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 						{!masonry && <>
 							{/* column define option  */}
 							<PanelRow className='mt20'>
-								<Title mt='0'>{__('Columns:', 'github')}</Title>
+								<Label mt='0'>{__('Columns:', 'github')}</Label>
 								<BDevice device={device} onChange={val => setDevice(val)} />
 							</PanelRow>
 
@@ -137,7 +131,7 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 					{logo && <>
 						<PanelBody className='bPlPanelBody' title={__('Icon', 'github')} initialOpen={false}>
 
-							<Title className='mt10'>{__('Size', 'github')}</Title>
+							<Label className='mt10'>{__('Size', 'github')}</Label>
 							<RangeControl value={githubIcon.size} onChange={(value) => {
 								updateObject('githubIcon', 'size', value)
 							}} min={1} max={100} />

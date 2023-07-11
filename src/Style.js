@@ -1,6 +1,6 @@
 
 import { getBoxValue } from './Const/functions';
-import { getBackgroundCSS, getBorderCSS, getTypoCSS, getColorsCSS } from '../../Components/Helper/getCSS';
+import { getBackgroundCSS, getBorderCSS, getTypoCSS, getColorsCSS } from '../../Components/utils/getCSS';
 const Style = ({ attributes, clientId }) => {
 	const { columnGap, rowGap, background, padding, cardBG, cardPadding, cardBorder, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColors, downloadBtnPadding, downloadBtnBorder, pageBtnTypo, pageBtnColors, pageBtnActiveColors, pageBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
 
