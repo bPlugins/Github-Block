@@ -28,9 +28,7 @@ class Activate extends BSDK{
             add_action('admin_menu', [$this, 'add_opt_in_menu']);
         }
 
-        if($this->status == 'agreed'){
-            register_deactivation_hook( $this->__FILE__, [$this, 'deactivate'] );
-        }
+        register_deactivation_hook( $this->__FILE__, [$this, 'deactivate'] );
 
         add_action('admin_footer', [$this, 'opt_in_modal']);
         add_action('admin_footer', [$this, 'initialize_opt_in']);
@@ -142,14 +140,7 @@ class Activate extends BSDK{
             'method'      => 'POST',
             'timeout'     => 45,
             'headers'     => array(),
-            'body'        => wp_parse_args($data, [
-                'website' => site_url(),
-                'user_email' => $user->user_email,
-                'user_nickname' => $user->user_nickname ? $user->user_nickname : $user->user_login,
-                'php_version' => phpversion(),
-                'platform_version' => $wp_version,
-                'plugin_version' => $this->version
-            ] )
+            'body'        => wp_parse_args($data, $this->getInfo() )
             )
         );
     }

@@ -4,7 +4,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon } from '@wordpress/components';
 
 // Settings Components
-import { Label, BDevice, Background, Typography, BColor, ColorsControl, BorderControl } from '../../Components';
+import { Label, BDevice, Background, Typography, BColor, ColorsControl, BorderControl, HelpPanel } from '../../Components';
 
 
 import { tabController } from './Const/functions';
@@ -38,18 +38,7 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 			<TabPanel className='bPlTabPanel ghbTabPanel' activeClass='activeTab' tabs={generalStyleTabs} onSelect={() => tabController()}>{tab => <>
 				{'general' === tab.name && <>
 
-					<PanelBody className='bPlPanelBody help' title={__('Help', 'github')} initialOpen={false}>
-						<div className='helpItem'>
-							<a href='https://bplugins.com/docs/embed-github-docs/' target='_blank' rel='noreferrer'><Dashicon icon='book' />{__('Read Documentation', 'github')}</a>
-						</div>
-
-						<div className='helpItem rateUs'>
-							<a href='https://wordpress.org/support/plugin/embed-github/reviews/#new-post' target='_blank' rel='noreferrer'>
-								<span><Dashicon icon='star-filled' />{__('Would you please rate us?', 'github')}</span>
-								<span>{__('We are new and we need your help to grow!🙏', 'github')}</span>
-							</a>
-						</div>
-					</PanelBody>
+					<HelpPanel slug="embed-github" docsLink="https://bplugins.com/docs/embed-github-docs" />
 
 					<PanelBody className='bPlPanelBody' title={__('Github Username', 'github')} initialOpen={false}>
 						<PanelRow className='gap10'>

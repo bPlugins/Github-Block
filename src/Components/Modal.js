@@ -34,7 +34,7 @@ const Modal = ({ currentPosts, attributes, pagination, setIsFullPage, handleFull
 
     return <>{!pagination && <>
         <div className="modalSection" onClick={(e) => {
-            if (e.target.classList.contains('ghbModalMainSection')) {
+            if (!e.target.classList.contains('ghbModalMainSection')) {
                 setIsFullPage(false);
             }
         }}>

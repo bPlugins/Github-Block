@@ -6,7 +6,7 @@
  * @since       1.0.0
  */
 
- $this_sdk_version = '1.1.1';
+ $this_sdk_version = '1.1.2';
 
  if(!class_exists('BPlugins_SDK')){
 
@@ -21,11 +21,13 @@
         protected $__FILE__ = __FILE__;
         private $lc = null;
         
-        function __construct($__FILE__, $config = WP_B__CONFIG){
+        function __construct($__FILE__, $config = null){
             $this->__FILE__ = $__FILE__;
-
             $config_file = plugin_dir_path( $this->__FILE__ ).'bsdk_config.json';
-            if(file_exists($config_file)){
+
+            if($config){
+                $this->config = (object) wp_parse_args(json_decode(json_encode($config)), WP_B__CONFIG);
+            }elseif(file_exists($config_file)){
                 $this->config =  (object) wp_parse_args(json_decode(file_get_contents($config_file)), WP_B__CONFIG);
             }else {
                 $config_file = plugin_dir_path( $this->__FILE__ ).basename(__DIR__).'/config.json';
@@ -75,16 +77,9 @@
         }
 
         function pipe_default_value(){
-
-            return "{\"zn8mpz8gt\":8ysg,\"key\":\"5BA6C68A-C7934CDB-A5A1443E-9BCBFEEA\",\"9gycz5mrj\":\"19z91\",\"8mcg\":\"63d362fduf2vv\"}";
-            $pipe = get_option( $this->prefix );
-            if( true ){
-                return wp_json_encode([
-                    "zn8mpz8gt" => "8ysg",
-                    "key" => '5BA6C68A-C7934CDB-A5A1443E-9BCBFEEA',
-                    "9gycz5mrj" => "19z91",
-                    "8mcg" => "63d362fduf2vv",
-                ]);
+            $pipe = get_option( $this->prefix."_pipe" );
+            if( $pipe ){
+                return $pipe;
             }else{
                 return "{}";
             }
