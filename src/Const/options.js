@@ -3,6 +3,10 @@ import { __ } from '@wordpress/i18n';
 import icons from './icons';
 
 const options = {
+	layoutOpt: [
+		{ label: 'Default', value: 'default' },
+		{ label: 'Masonry', value: 'masonry' }
+	],
 	infoOption: [
 		{ label: 'Logo', value: 'logo' },
 		{ label: 'Name', value: 'name' },

@@ -14,19 +14,22 @@ html {
 
 // Github
 .wp-block-ghb-github {
+	* {
+		box-sizing: border-box;
+	}
+
 	.ghbSectionArea {
 		background-color: #000;
 		padding: 20px;
 
 		.ghbMainArea {
-			display: grid;
-			position: relative;
 
 			.ghbSingleRepo {
 				.ghbSingleRepoCard {
 					position: relative;
 					z-index: 1;
 					overflow: hidden;
+					height: 100%;
 
 					&::after {
 						content: '';
@@ -101,6 +104,13 @@ html {
 				}
 			}
 
+			&.default {
+				display: grid;
+			}
+
+			&.masonry {
+				display: initial;
+			}
 
 		}
 
@@ -323,37 +333,23 @@ html {
 			row-gap: 10px;
 
 			button {
-				width: 40px;
 				height: 40px;
 				font-family: inherit;
-				font-weight: 600;
-				font-size: 16px;
 				margin: 0 10px;
+				padding: 0px;
 				cursor: pointer;
 				transition: all 0.3s ease;
 				background: transparent;
-				color: #eee;
 				border: 1px solid #eee;
 
 				&.active {
 					font-weight: 900;
 					border-color: #222;
-					background: #fff;
-					color: #101010;
 				}
 			}
 		}
 
 	}
-
-	.masonry {
-		position: relative;
-
-		.ghbSingleRepo {
-			position: absolute;
-		}
-	}
-
 
 	.ghbUserName {
 		background-color: #000;

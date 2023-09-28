@@ -1,40 +1,15 @@
 
-import { useEffect, useRef, useState } from 'react';
+
 import icons from '../Const/icons';
-import Description from './Description';
-import Download from './Download';
-import Logo from './Logo';
-import RepoName from './RepoName';
-import Topic from './Topic';
-import MiniMasonry from "minimasonry";
-import { getNumber } from '../Const/functions';
+import Default from './Layout/Default';
+import Masonry from './Layout/MasonryArea';
 
-const Modal = ({ currentPosts, attributes, pagination, setIsFullPage, handleFullPage, toggleClass, repos, logo, repoName, desc, download, topic, masonry }) => {
-    const { columns, githubIcon, columnGap, rowGap } = attributes;
-    const [miniMasonry, setMiniMasonry] = useState(null);
-    const containerRef = useRef();
-
-    useEffect(() => {
-        if (containerRef.current?.classList.contains('masonry') && masonry) {
-
-            var masonayrObj = new MiniMasonry({
-                container: containerRef.current,
-                gutterX: getNumber(columnGap),
-                gutterY: getNumber(rowGap),
-                minify: false,
-                ultimateGutter: 5,
-                surroundingGutter: true,
-            });
-            setMiniMasonry(masonayrObj);
-
-        } else {
-            miniMasonry?.destroy();
-        }
-    }, [currentPosts, masonry, columnGap, rowGap]);
+const Modal = ({ attributes, pagination, setIsFullPage, handleFullPage, toggleClass, repos, logo, repoName, desc, download, topic }) => {
+    const { columns, githubIcon, layout } = attributes;
 
     return <>{!pagination && <>
         <div className="modalSection" onClick={(e) => {
-            if (!e.target.classList.contains('ghbModalMainSection')) {
+            if (e.target.classList.contains('ghbModalMainSection')) {
                 setIsFullPage(false);
             }
         }}>
@@ -45,23 +20,19 @@ const Modal = ({ currentPosts, attributes, pagination, setIsFullPage, handleFull
                     <div className="ghbCloseBtn" onClick={() => setIsFullPage(false)}>
                         {icons.closeBtn}
                     </div>
-                    <div ref={containerRef} className={`ghbMainArea ${masonry && 'masonry'} columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile}`}>
-                        {repos?.map((repositorie, index) => {
-                            const { name, description, html_url, topics, default_branch } = repositorie;
-
-                            return <div key={index} className="ghbSingleRepo">
-                                <div className='ghbSingleRepoCard'>
-                                    <Logo logo={logo} githubIcon={githubIcon} />
-                                    <RepoName repoName={repoName} name={name} html_url={html_url} />
-                                    <Description desc={desc} description={description} />
-
-                                    <div className="footer">
-                                        <Download download={download} html_url={html_url} default_branch={default_branch} />
-                                        <Topic topic={topic} topics={topics} />
-                                    </div>
-                                </div>
-                            </div>;
-                        })}
+                    <div className={`ghbMainArea ${layout} columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile}`}>
+                        {
+                            (() => {
+                                switch (layout) {
+                                    case 'default':
+                                        return <Default currentPosts={repos} logo={logo} githubIcon={githubIcon} repoName={repoName} desc={desc} download={download} topic={topic} />;
+                                    case 'masonry':
+                                        return <Masonry attributes={attributes} currentPosts={repos} logo={logo} githubIcon={githubIcon} repoName={repoName} desc={desc} download={download} topic={topic} />
+                                    default:
+                                        return null;
+                                }
+                            })()
+                        }
                     </div>
                 </div>
             </div>

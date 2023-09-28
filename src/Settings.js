@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import produce from 'immer';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon } from '@wordpress/components';
+import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon, SelectControl } from '@wordpress/components';
 
 // Settings Components
 import { Label, BDevice, Background, Typography, BColor, ColorsControl, BorderControl, HelpPanel } from '../../Components';
@@ -12,10 +12,10 @@ import icons from './Const/icons';
 import options from './Const/options';
 import { useState, useEffect } from '@wordpress/element';
 
-const { generalStyleTabs, pxUnit, perUnit, emUnit } = options;
+const { generalStyleTabs, pxUnit, perUnit, emUnit, layoutOpt } = options;
 
 const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
-	const { columns, columnGap, rowGap, userName, elements, query, background, padding, cardBG, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColors, downloadBtnPadding, downloadBtnBorder, pageBtnTypo, pageBtnColors, pageBtnActiveColors, pageBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding } = attributes;
+	const { columns, columnGap, rowGap, userName, elements, query, background, padding, cardBG, cardPadding, cardBorder, githubIcon, nameTypo, nameColor, descTypo, descColor, downloadBtnTypo, downloadBtnColors, downloadBtnPadding, downloadBtnBorder, pageBtnTypo, pageBtnColors, pageBtnActiveColors, pageBtnBorder, modalBtnTypo, modalBtnColors, modalBtnHoverColors, modalBtnBorder, modalBtnHoverBorder, modalBtnPadding, layout } = attributes;
 
 	const { logo, repoName, desc, download, topic, pagination, masonry } = elements;
 	const { postsPerPage } = query;
@@ -79,7 +79,9 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 
 					<PanelBody className='bPlPanelBody' title={__('Layout', 'github')} initialOpen={false}>
 
-						<ToggleControl label={__('Masonry', 'github')} className='mt20' checked={masonry} onChange={(val) => { updateObject('elements', 'masonry', val) }} />
+						<SelectControl label={__('Select Layout')} options={layoutOpt} value={layout} onChange={val => setAttributes({ layout: val })} />
+
+
 
 						{/* column Gap  */}
 						<UnitControl className='mt20' label={__('Column Gap:', 'github')} labelPosition='left' value={columnGap} onChange={val => setAttributes({ columnGap: val })} units={[pxUnit(30), perUnit(3), emUnit(2)]} isResetValueOnUnitChange={true} />
@@ -87,16 +89,13 @@ const Settings = ({ attributes, setAttributes, setRepos, handleFetchData }) => {
 						{/* row Gap  */}
 						<UnitControl className='mt20' label={__('Row Gap:', 'github')} labelPosition='left' value={rowGap} onChange={val => setAttributes({ rowGap: val })} units={[pxUnit(40), perUnit(3), emUnit(2.5)]} isResetValueOnUnitChange={true} />
 
-						{!masonry && <>
-							{/* column define option  */}
-							<PanelRow className='mt20'>
-								<Label mt='0'>{__('Columns:', 'github')}</Label>
-								<BDevice device={device} onChange={val => setDevice(val)} />
-							</PanelRow>
+						{/* column define option  */}
+						<PanelRow className='mt20'>
+							<Label mt='0'>{__('Columns:', 'github')}</Label>
+							<BDevice device={device} onChange={val => setDevice(val)} />
+						</PanelRow>
 
-							<RangeControl value={columns[device]} onChange={val => { setAttributes({ columns: { ...columns, [device]: val } }) }} min={1} max={6} step={1} beforeIcon='grid-view' />
-						</>}
-
+						<RangeControl value={columns[device]} onChange={val => { setAttributes({ columns: { ...columns, [device]: val } }) }} min={1} max={6} step={1} beforeIcon='grid-view' />
 					</PanelBody>
 
 				</>}
