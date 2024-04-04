@@ -3,7 +3,7 @@
  * Plugin Name:  Embed Github
  * Description: Embed your GitHub repositories on WordPress.
  * Version: 1.0.3
- * Author: bPlugins LLC
+ * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -14,7 +14,15 @@
 if (!defined('ABSPATH')) {exit;}
 
 // Constant
-define('GHB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.3');
+if ('localhost' === $_SERVER['HTTP_HOST']) {
+    $plugin_version = time();
+} else {
+    $plugin_version = '1.0.3';
+
+}
+define('GHB_PLUGIN_VERSION', $plugin_version);
+
+// define('GHB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST']  time() : '1.0.3');
 define('GHB_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
 
 if (!function_exists('ghb_init')) {

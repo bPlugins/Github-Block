@@ -1,4 +1,4 @@
-# Copyright (C) 2023 bPlugins LLC
+# Copyright (C) 2024 bPlugins
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-09T06:39:16+00:00\n"
+"POT-Creation-Date: 2024-04-04T16:18:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: github\n"
@@ -23,7 +23,7 @@ msgid "Embed your GitHub repositories on WordPress."
 msgstr ""
 
 #. Author of the plugin
-msgid "bPlugins LLC"
+msgid "bPlugins"
 msgstr ""
 
 #. Author URI of the plugin
@@ -31,171 +31,171 @@ msgid "http://bplugins.com"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8531
+#: dist/editor.js:8539
 msgid "Github Username"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8538
+#: dist/editor.js:8546
 msgid "Fetch Data"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8543
+#: dist/editor.js:8551
 msgid "Repositories Info"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8545
+#: dist/editor.js:8553
 msgid "Logo"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8547
-#: dist/editor.js:8621
+#: dist/editor.js:8555
+#: dist/editor.js:8629
 msgid "Name"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8549
-#: dist/editor.js:8630
+#: dist/editor.js:8557
+#: dist/editor.js:8638
 msgid "Description"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8551
+#: dist/editor.js:8559
 msgid "Download Button"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8553
+#: dist/editor.js:8561
 msgid "Topic"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8557
-#: dist/editor.js:8559
-#: dist/editor.js:8652
+#: dist/editor.js:8565
+#: dist/editor.js:8567
+#: dist/editor.js:8660
 msgid "Pagination"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8561
+#: dist/editor.js:8569
 msgid "Repositories  Per Page"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8568
+#: dist/editor.js:8576
 msgid "Layout"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8575
+#: dist/editor.js:8583
 msgid "Column Gap:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8578
+#: dist/editor.js:8586
 msgid "Row Gap:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8582
+#: dist/editor.js:8590
 msgid "Columns:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8593
+#: dist/editor.js:8601
 msgid "Wrapper"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8594
-#: dist/editor.js:8600
+#: dist/editor.js:8602
+#: dist/editor.js:8608
 msgid "Background:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8596
-#: dist/editor.js:8602
-#: dist/editor.js:8645
-#: dist/editor.js:8675
+#: dist/editor.js:8604
+#: dist/editor.js:8610
+#: dist/editor.js:8653
+#: dist/editor.js:8683
 msgid "Padding"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8599
+#: dist/editor.js:8607
 msgid "Card"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8604
-#: dist/editor.js:8647
-#: dist/editor.js:8659
-#: dist/editor.js:8671
+#: dist/editor.js:8612
+#: dist/editor.js:8655
+#: dist/editor.js:8667
+#: dist/editor.js:8679
 msgid "Border"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8608
+#: dist/editor.js:8616
 msgid "Icon"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8610
+#: dist/editor.js:8618
 msgid "Size"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8615
-#: dist/editor.js:8624
-#: dist/editor.js:8633
+#: dist/editor.js:8623
+#: dist/editor.js:8632
+#: dist/editor.js:8641
 msgid "Color"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8622
-#: dist/editor.js:8631
-#: dist/editor.js:8641
-#: dist/editor.js:8653
-#: dist/editor.js:8665
+#: dist/editor.js:8630
+#: dist/editor.js:8639
+#: dist/editor.js:8649
+#: dist/editor.js:8661
+#: dist/editor.js:8673
 msgid "Typography"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8639
+#: dist/editor.js:8647
 msgid "Download Button & Topic"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8643
-#: dist/editor.js:8655
-#: dist/editor.js:8667
+#: dist/editor.js:8651
+#: dist/editor.js:8663
+#: dist/editor.js:8675
 msgid "Colors"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8657
+#: dist/editor.js:8665
 msgid "Active Colors"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8664
+#: dist/editor.js:8672
 msgid "Modal Button"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8669
+#: dist/editor.js:8677
 msgid "Hover Colors"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8673
+#: dist/editor.js:8681
 msgid "Hover Border"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:13213
+#: dist/editor.js:13290
 msgid "Please Insert Your Github Username And Fetch Data"
 msgstr ""
 

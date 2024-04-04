@@ -1,5 +1,5 @@
+import { createRoot } from 'react-dom/client';
 import { useState, useEffect } from 'react';
-import { render } from 'react-dom';
 import axios from "axios";
 
 import './style.scss';
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	allBlockDirectory.forEach(directory => {
 		const attributes = JSON.parse(directory.dataset.attributes);
 
-		render(<>
+		createRoot(directory).render(<>
 			<Style attributes={attributes} clientId={attributes.cId} />
 			<RenderRepositories attributes={attributes} />
-		</>, directory);
+		</>);
 
 		directory?.removeAttribute('data-attributes');
 	});
