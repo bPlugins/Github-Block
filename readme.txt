@@ -1,5 +1,5 @@
 === Embed Github ===
-Contributors: abuhayat,btechnologies
+Contributors: bplugins, abuhayat, btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: github, git, embed, repositories, block
 Requires at least: 5.3+
