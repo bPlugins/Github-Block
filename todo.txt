@@ -1,2 +1,3 @@
 #feature
 == I've tried using {org}/teams/{name of team} as
+== Ability to display specific folder of repository

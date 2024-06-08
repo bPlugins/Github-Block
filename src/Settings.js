@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import produce from 'immer';
+import { produce } from 'immer';
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, TabPanel, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, Button, __experimentalInputControl as InputControl, Dashicon, SelectControl } from '@wordpress/components';
 
