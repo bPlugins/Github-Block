@@ -19,12 +19,10 @@ const Repositories = ({ attributes, repos, clientId }) => {
 
 	// Handle full page 
 	const handleFullPage = () => {
-		console.log("hi");
 		setIsFullPage(true);
 	}
 
 	let toggleClass = isFullPage ? 'activeFull' : null;
-	console.log(isFullPage);
 
 	useEffect(() => {
 		const lastPostsIndex = currentPage * postsPerPage;

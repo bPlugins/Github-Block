@@ -9,7 +9,6 @@ export const bundle = () => gulp.src([
 	'**/*',
 	'!bundled/**',
 	'!node_modules/**',
-	'!src/**',
 	'!.eslintrc.js',
 	'!.gitignore',
 	'!gulpfile.mjs',
@@ -19,7 +18,7 @@ export const bundle = () => gulp.src([
 	'!todo.txt',
 	'!webpack.config.js',
 ]).pipe(
-	zip('embed-github-block.zip')
+	zip('embed-github.zip')
 ).pipe(
 	gulp.dest('bundled')
 );

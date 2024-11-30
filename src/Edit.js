@@ -54,7 +54,7 @@ const Edit = props => {
 				{repos.length ?
 					<Repositories clientId={clientId} attributes={attributes} repos={repos} setRepos={setRepos} loading={loading} setLoading={setLoading} />
 					: <div className='ghbUserName'>
-						<h1>{__('Please Insert Your Github Username And Fetch Data', 'github')}</h1>
+						<h1>{__('Please Insert Your Github Username And Fetch Data', 'embed-github')}</h1>
 					</div>}
 			</>}
 		</div >

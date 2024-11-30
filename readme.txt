@@ -1,14 +1,14 @@
-=== Embed Github ===
+=== Embed Repo For Github ===
 Contributors: bplugins, abuhayat, btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: github, git, embed, repositories, block
-Requires at least: 5.3+
-Tested up to: 6.5
-Stable tag: 1.0.3
-Requires PHP: 7.1
+Requires at least: 6.5+
+Tested up to: 6.7.1
+Stable tag: 1.0.6
+Requires PHP: 7.1 
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
+ 
 Embed your GitHub repositories on WordPress.  
 
 == Description ==
@@ -111,7 +111,16 @@ You can post your questions on the [support forum here](https://wordpress.org/su
  
 == Changelog ==
 
-= 1.0.3 - 9 Nov,23 =
+= 1.0.6 - 30 Nov, 24 =
+* Attach correct github repository
+
+= 1.0.5 - 28 Nov, 24 =
+* Solved all problem
+
+= 1.0.4 - 21 Nov,24 =
+* Trademark issues solved
+
+= 1.0.3 - 9 Nov,24 =
 * WordPress version update
 
 = 1.0.2 - 28 sept, 2023 =
@@ -126,7 +135,16 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Upgrade Notice ==
 
-= 1.0.3 - 9 Nov,23 =
+= 1.0.6 - 30 Nov, 24 =
+* Attach correct github repository
+
+= 1.0.5 - 28 Nov, 24 =
+* Solved all problem
+
+= 1.0.4 - 21 Nov,24 =
+* Trademark issues solved
+
+= 1.0.3 - 9 Nov,24 =
 * WordPress version update
 
 = 1.0.2 - 28 sept, 2023 =
@@ -137,3 +155,32 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 = 1.0.0 =
 * Initial Release
+
+
+
+== Third-Party Services Used ==
+The following third-party APIs are utilized in this plugin for license management:
+
+1. *Gumroad API*
+   - *Endpoint:* `https://api.gumroad.com/v2/licenses/verify`
+   - *Purpose:* License verification for products distributed through Gumroad.
+   - *Documentation:* Gumroad API Documentation
+   - *Terms of Service:* Gumroad Terms
+   - *Privacy Policy:* Gumroad Privacy Policy
+
+2. *bPlugins License Management API*
+   - *Endpoints:*
+   - `https://api.bplugins.com/wp-json/license/v1/sync-license`
+   - `https://api.bplugins.com/wp-json/license/v1/gumroad`
+   - `https://api.bplugins.com/wp-json/data/v1/accept-data`
+   - *Purpose:* Syncing license data, verifying licenses, and managing product information.
+   - *Privacy Policy:* bPlugins Privacy Policy
+
+
+== Developer Notes ==
+
+Public source code GitHub link for review, study, and contribute.
+
+https://github.com/bPlugins/Github-Block
+
+For more information on how to contribute to this plugin, please visit our GitHub repository.

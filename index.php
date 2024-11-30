@@ -1,28 +1,20 @@
 <?php
 /**
- * Plugin Name:  Embed Github
+ * Plugin Name: Embed Repo For Github
  * Description: Embed your GitHub repositories on WordPress.
- * Version: 1.0.3
+ * Version: 1.0.6
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain: github
+ * Text Domain: embed-github
  */
 
 // ABS PATH
 if (!defined('ABSPATH')) {exit;}
 
 // Constant
-if ('localhost' === $_SERVER['HTTP_HOST']) {
-    $plugin_version = time();
-} else {
-    $plugin_version = '1.0.3';
-
-}
-define('GHB_PLUGIN_VERSION', $plugin_version);
-
-// define('GHB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST']  time() : '1.0.3');
+define( 'GHB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.6' );
 define('GHB_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
 
 if (!function_exists('ghb_init')) {
@@ -51,7 +43,7 @@ class GHBEmbedGithub
 
         wp_register_style('ghb-github-style', plugins_url('dist/style.css', __FILE__), [], GHB_PLUGIN_VERSION);
 
-        wp_register_script('ghb-github-script', plugins_url('dist/script.js', __FILE__), ['react', 'react-dom'], GHB_PLUGIN_VERSION);
+        wp_register_script('ghb-github-script', plugins_url('dist/script.js', __FILE__), ['react', 'react-dom'], GHB_PLUGIN_VERSION, true);
 
     }
 
@@ -64,7 +56,7 @@ class GHBEmbedGithub
             'render_callback' => [$this, 'render'],
         ]); // Register Block
 
-        wp_set_script_translations('ghb-github-editor-script', 'github', plugin_dir_path(__FILE__) . 'languages'); // Translate
+        wp_set_script_translations('ghb-github-editor-script', 'embed-github', plugin_dir_path(__FILE__) . 'languages'); // Translate
     }
 
     public function render($attributes)
